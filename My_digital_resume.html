@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Résumé</title>
+<link rel = "icon" href ="avtar.png" type = "image/x-icon">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {
+  box-sizing: border-box;
+}
+h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+
+html {
+height: 100%;
+margin: 0;
+color: #777;
+}
+body {
+  background-color: black;
+  font-family: Montserrat, sans-serif;
+}
+.timeline h3{color:black}
+.timeline p{color:black}
+
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 0.1px 5px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 20px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 0.02px 10px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {
+#main {margin-left: 0}
+ /* Place the timelime to the left */
+  .timeline::after {
+  left: 31px;
+  }
+  
+  /* Full-width containers */
+  .container {
+  width: 100%;
+  padding-left: 50px;
+  padding-right: 20px;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+  left: 15px;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .right {
+  left: 0%;
+  }
+}
+
+
+.bgimg-1, .bgimg-2, .bgimg-3 {
+position: relative;
+opacity: 0.65;
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+.bgimg-1 {
+background-image: url("unnamed.jpg");
+min-height: 100%;
+}
+.bgimg-2 {
+background-image: url("unnamed.jpg");
+min-height: 400px;
+}
+.bgimg-3 {
+background-image: url("unnamed.jpg");
+min-height: 400px;
+}
+
+h3 {
+letter-spacing: 5px;
+text-transform: uppercase;
+font: 20px "Lato", sans-serif;
+color: #111;
+}
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+.bgimg-1, .bgimg-2, .bgimg-3 {
+background-attachment: scroll;
+}
+}
+</style>
+</head>
+<body class="w3-black">
+
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in top left corner -->
+  <img src="0.jpg" style="width:100%">
+  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p>HOME</p>
+  </a>
+  <a href="#education" class="w3-bar-item w3-button w3-padding-large w3-hover-black" style="text-align:center">
+    <i class="fa fa-graduation-cap w3-xxlarge"></i>
+    <p>EDUCATION</p>
+  </a>
+    <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-user w3-xxlarge"></i>
+    <p>ABOUT</p>
+  </a>
+  <a href="#project" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-eye w3-xxlarge"></i>
+    <p>PROJECTS</p>
+  </a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>CONTACT</p>
+  </a>
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="#home" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+	<a href="#education" class="w3-bar-item w3-button" style="width:25% !important">EDUCATION</a>
+	<a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+    <a href="#project" class="w3-bar-item w3-button" style="width:25% !important">PROJECTS</a>
+    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+  </div>
+</div>
+
+<div class="bgimg-1 w3-padding-large" id="main">
+<header class="w3-container w3-padding-32 w3-center" >
+    <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> Christine Polly Paul.</h1>
+    <p>IT Engineer.</p>
+	 <div class="w3-content w3-justify w3-text-grey w3-padding-64">
+      <h2 class="w3-text-light-grey">Summary</h2>
+    <hr style="width:100px" class="w3-opacity">
+    <p>IT Engineer, aspiring data analyst /business analyst with good public speaking and analytical skills. Other programming skills like Excel, Android development, HTML,CSS, PHP, image processing with python, basic IOT development. Strong team player. Always ready to learn something new.</p>
+	</div>
+ </header>
+  	<div id="home"></div>
+</div>
+</div>
+<div id="main" >
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64">
+    <h2 class="w3-text-light-grey" id="education">Education</h2>
+	   <hr style="width:100px" class="w3-opacity">
+	   <div class="timeline">
+  <div class="container left">
+    <div class="content">
+      <h3>2019</h3>
+      <p><b>College/Certificate:</b>Don Bosco Institute of technology,    Information Technology</p>
+	  <p><b>University:</b>Mumbai University</p>
+	  <p><b>Score: </b>7.06  ptr(cgpa)(3.0 gpa)</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h3>2015</h3>
+      <p><b>College/Certificate: </b>Vani Vidyalaya Junior College - H.S.C (Science)</p>
+	  <p><b>University: </b>Maharashtra State board</p>
+	  <p><b>Score: </b>74%</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h3>2013</h3>
+      <p><b>College/Certificate: </b>St. Mary's Convent High School - S.S.C.</p>
+	  <p><b>University: </b>Maharashtra State board</p>
+	  <p><b>Score: </b>80%</p>
+    </div>
+  </div>
+</div>
+</div>
+<div class="bgimg-2">
+ <div id="about" class="w3-content w3-justify w3-text-grey w3-padding-64">
+     <h2 class="w3-text-light-grey">My Skills</h2>
+	<hr style="width:100px" class="w3-opacity">
+	<div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half">
+    <p>Python</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:5px;width:95%"></div>
+    </div>
+    <p>SQL</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:5px;width:85%"></div>
+    </div>
+	<p>HTML</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:5px;width:85%"></div>
+    </div>
+	<p>CSS</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:5px;width:85%"></div>
+    </div>
+	<p>Phpmyadmin</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:5px;width:85%"></div>
+    </div>
+	<p>Android App development</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:5px;width:85%"></div>
+    </div>
+	<p>IoT Home Automation development</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:5px;width:85%"></div>
+    </div>
+	</div>
+	<div class="w3-half">
+    <p>Microsoft Excel</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:5px;width:80%"></div>
+    </div>
+	<p>Microsoft Word</p>
+    <div class="w3-white"> 
+      <div class="w3-dark-grey" style="height:5px;width:85%"></div>
+    </div>
+	<p>Microsoft Powerpoint</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:5px;width:85%"></div>
+    </div>
+	<p>Adobe After Effect Animation</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:5px;width:85%"></div>
+    </div>
+	<p>Blender Animation Software</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:5px;width:85%"></div>
+    </div>
+	<p>WordPress Website Development</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:5px;width:85%"></div>
+    </div>
+	<p>Raspberry Pi</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:5px;width:85%"  id="project"></div>
+    </div>
+    </div>
+	</div>
+    </div>
+</div>
+</div>
+
+<div id="main" style="position:relative;">
+ <!-- Portfolio Section -->
+  <div class="w3-padding-64 w3-content">
+    <h2 class="w3-text-light-grey">My Projects</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <!-- Grid for project -->
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half">
+		<p> Website development: </p>
+        <a href="https://christine-97.github.io/Video-Background/" style="width:100%">1. Video background</a><br>
+        <a href="https://christine-97.github.io/web-programming/demo.html" style="width:100%">2. College assignment</a></br>
+        <a href="https://christine-97.github.io/Hi-It-s-Me./" style="width:100%">3. Animated night star background</a></br>
+		<p> Android development: </p>
+		<a href="https://github.com/Christine-97/Firebase-App" style="width:100%">1. Upload to cloud (firebase) app</a><br>
+        <a href="https://github.com/Christine-97/Intrusion_detection_app" style="width:100%">2. Intrusion system</a></br>
+	  </div>
+
+      <div class="w3-half">
+		<p> Python project: </p>
+        <a href="https://github.com/Christine-97/face-detection" style="width:100%">1. Face Detection</a><br>
+        <a href="https://github.com/Christine-97/BGR2GRAY" style="width:100%">2. Color to grey scale</a></br>
+        <p> Data Analysis projects: </p>
+		<a href="https://github.com/Christine-97/data-analysis-project/blob/master/IBM%20Python%20for%20Data%20Science.ipynb" style="width:100%">1. House sales in king country, USA.</a><br>
+        <a href="https://github.com/Christine-97/data-analysis-project/blob/master/K%20means%20.ipynb" style="width:100%">2. K means</a></br>
+		<a href="https://github.com/Christine-97/data-analysis-project/blob/master/_KN%20method.ipynb" style="width:100%">3. KN method</a></br>
+	  </div>
+	
+    <!-- End project grid -->
+</div>
+</div>
+<div class="bgimg-3">
+  <!-- Contact Section -->
+  <div class="w3-padding-64 w3-content w3-text-grey" >
+    <h2 class="w3-text-light-grey" id="contact">Contact Me</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Sharjah, UAE</p>
+      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +971 545600118</p>
+      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: christinedbit@gmail.com</p>
+    </div>
+		
+	<a href="Christine Polly Paul.pdf" download="Christine Polly Paul">
+      <button class="w3-button w3-light-grey w3-padding-large w3-section">
+      <i class="fa fa-download"></i> Download Resume
+	  </button>
+	</a>
+
+  <!-- End Contact Section -->
+  </div>
+</div>
+<div id="main" style="position:relative;">
+	    <!-- Footer -->
+	<footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+	  <a class="fa fa-github w3-hover-opacity" href="https://github.com/Christine-97/"></a>
+	  <a class="fa fa-linkedin w3-hover-opacity" href="https://www.linkedin.com/in/christine-polly-paul-047545160/"></a>
+	  <p style="text:20px;">By Christine Polly Paul.</p>
+	</footer>
+	    <!-- End footer -->
+</div>
+</div>
+</body>
+</html>
